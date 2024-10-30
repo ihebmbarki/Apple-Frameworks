@@ -5,4 +5,15 @@
 //  Created by Iheb Mbarki on 16/10/2024.
 //
 
-import Foundation
+import SwiftUI
+
+final class FrameworkGridViewModel: ObservableObject {
+    
+    var selectedFramework: Framework? {
+        didSet {
+            isShowingDetailView = true
+        }
+    }
+    
+    @Published var isShowingDetailView = false
+}
