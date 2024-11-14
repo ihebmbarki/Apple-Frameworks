@@ -38,8 +38,12 @@ struct FrameworkDetailView: View {
             Button {
                 isShowingSafariView = true
             } label: {
-                AFButton(title: "Learn More")
+//                AFButton(title: "Learn More")
+                Label("Learn More", systemImage: "book.fill")
             }
+            .buttonStyle(.bordered)
+            .controlSize(.large)
+            .tint(.red)
         }
         .sheet(isPresented: $isShowingSafariView, content: {
             Safariview(url: URL(string: framework.urlString) ?? URL(string: "www.apple.com")!)
